@@ -26,13 +26,13 @@ jobs:
       actions: read # Required for Claude to read CI results on PRs
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 1
       - name: Project Setup
         run: |
           npm run setup
-          npm run dev:deamon
+          npm run dev:daemon
           
       - name: Run Claude Code
         id: claude
